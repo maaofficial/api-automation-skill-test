@@ -24,8 +24,8 @@ jobs:
       - name: Make envFile
         uses: SpicyPizza/create-envfile@v1.3
         with:
-            KEY: ${{ secrets.SECRET1 }}
-            BASE_URL: ${{ secrets.SECRET2 }}
+            KEY: ${{ secrets.SECRET2 }}
+            BASE_URL: ${{ secrets.SECRET1 }}
             file_name: .env
             fail_on_empty: false
       - uses: actions/checkout@v2
