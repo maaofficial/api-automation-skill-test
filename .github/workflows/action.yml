@@ -21,13 +21,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '${{ matrix.node }}'
-      - name: Make envFile
-        uses: SpicyPizza/create-envfile@v1.3
-        with:
-            envkey_KEY: ${{ secrets.SECRET2 }}
-            envkey_BASE_URL: ${{ secrets.SECRET1 }}
-            file_name: .env
-            fail_on_empty: false
+        env:
+          BASE_URL: ${{ secrets.SECRET1 }}
+          KEY : ${{ secrets.SECRET2 }}
       - uses: actions/checkout@v2
       - name: 'Cache node_modules'
         uses: actions/cache@v2
