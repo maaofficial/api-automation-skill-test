@@ -18,7 +18,7 @@ jobs:
         node:
           - 14
     steps:
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
           node-version: '${{ matrix.node }}'
         env:
@@ -39,5 +39,8 @@ jobs:
           yarn add dotenv
           yarn add chai
           yarn add mochawesome
+          touch .env
+          echo BASE_URL="${{ secrets.SECRET1 }}" >> .env
+          echo KEY="${{ secrets.SECRET2 }}" >> .env
       - name: Run All Node.js Tests
         run: yarn run mocha:test

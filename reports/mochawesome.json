@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2022-10-26T11:41:47.406Z",
-    "end": "2022-10-26T11:41:49.257Z",
-    "duration": 1851,
+    "start": "2022-10-26T13:58:12.195Z",
+    "end": "2022-10-26T13:58:14.504Z",
+    "duration": 2309,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a77dff21-34ee-434c-b48e-1caeda3de024",
+      "uuid": "c62e4b49-638a-404f-933a-b84d411da9f6",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,9 +27,9 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "4e74354b-5861-4d6b-a31e-374ff098e921",
+          "uuid": "2940bd08-2526-4e08-b5c9-f606f6e505d6",
           "title": "Jojonomic API Automation Skill Test Wheater",
-          "fullFile": "D:\\Refactory\\Jojonomic\\apiautomation-skill-test\\tests\\scenarios\\wheater.test.js",
+          "fullFile": "D:\\Refactory\\Jojonomic\\api-automation-skill-test\\tests\\scenarios\\wheater.test.js",
           "file": "\\tests\\scenarios\\wheater.test.js",
           "beforeHooks": [],
           "afterHooks": [],
@@ -38,7 +38,7 @@
               "title": "Should be able to get current wheater data based on Lat and Lon",
               "fullTitle": "Jojonomic API Automation Skill Test Wheater Should be able to get current wheater data based on Lat and Lon",
               "timedOut": false,
-              "duration": 1078,
+              "duration": 1480,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,28 +47,28 @@
               "context": null,
               "code": "const response = await WheaterbitAPI.get_current_wheater(data.VALID_PARAMS);\nlet jsonData = response.data\nconsole.log(jsonData.data[0].state_code)\nassert.equal(response.status, 200);\nassert.containsAllKeys(response.data, ['count', 'data'])\nassert.equal(jsonData.data[0].state_code, 'NY')",
               "err": {},
-              "uuid": "5dc72a39-d570-4528-8715-4377ebcc62ca",
-              "parentUUID": "4e74354b-5861-4d6b-a31e-374ff098e921",
+              "uuid": "57ccdf88-d3c8-4742-a21e-984189b57d06",
+              "parentUUID": "2940bd08-2526-4e08-b5c9-f606f6e505d6",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5dc72a39-d570-4528-8715-4377ebcc62ca"
+            "57ccdf88-d3c8-4742-a21e-984189b57d06"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1078,
+          "duration": 1480,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "5063f755-11f6-43c7-9d58-3e08f3da7100",
+          "uuid": "a2682131-4c8c-412a-a3ce-a316ad3ce6b1",
           "title": "Jojonomic API Automation Skill Test Forecast",
-          "fullFile": "D:\\Refactory\\Jojonomic\\apiautomation-skill-test\\tests\\scenarios\\wheater.test.js",
+          "fullFile": "D:\\Refactory\\Jojonomic\\api-automation-skill-test\\tests\\scenarios\\wheater.test.js",
           "file": "\\tests\\scenarios\\wheater.test.js",
           "beforeHooks": [],
           "afterHooks": [],
@@ -77,29 +77,29 @@
               "title": "Should be able to get current forecast based on postal code and hours",
               "fullTitle": "Jojonomic API Automation Skill Test Forecast Should be able to get current forecast based on postal code and hours",
               "timedOut": false,
-              "duration": 770,
+              "duration": 825,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "const response = await WheaterbitAPI.get_forecast_wheater(data.VALID_PARAMS_FORECAST);\nlet jsonData = response.data\n// console.log(jsonData.data[0].timestamp_utc);\n// console.log(jsonData.data[0].weather);\nassert.equal(response.status, 200);\nassert.equal(jsonData.data[0].timestamp_utc, '2022-10-26T12:00:00')\nassert.equal(jsonData.data[0].weather.code, 804)\nassert.equal(jsonData.data[0].weather.icon, 'c04d')\nassert.equal(jsonData.data[0].weather.description, 'Overcast clouds')",
+              "code": "const response = await WheaterbitAPI.get_forecast_wheater(data.VALID_PARAMS_FORECAST);\nlet jsonData = response.data\nconsole.log(jsonData.data[0].timestamp_utc);\nconsole.log(jsonData.data[0].weather);\nassert.equal(response.status, 200);",
               "err": {},
-              "uuid": "04854745-9202-4654-b534-844e8ae78699",
-              "parentUUID": "5063f755-11f6-43c7-9d58-3e08f3da7100",
+              "uuid": "4512d94a-cf99-4c2f-b39e-12caeca79228",
+              "parentUUID": "a2682131-4c8c-412a-a3ce-a316ad3ce6b1",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "04854745-9202-4654-b534-844e8ae78699"
+            "4512d94a-cf99-4c2f-b39e-12caeca79228"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 770,
+          "duration": 825,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
