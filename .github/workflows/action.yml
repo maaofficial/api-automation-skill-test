@@ -1,0 +1,47 @@
+name: Tests
+'on':
+  push:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+  schedule:
+    - cron: '0 6 * * 0'
+
+jobs:
+  test:
+    name: 'Node.js v${{ matrix.node }}'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node:
+          - 14
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '${{ matrix.node }}'
+      - name: Make envFile
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+            KEY: ${{ secrets.SECRET2 }}
+            BASE_URL: ${{ secrets.SECRET1 }}
+            file_name: .env
+            fail_on_empty: false
+      - uses: actions/checkout@v2
+      - name: 'Cache node_modules'
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-v${{ matrix.node }}-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-v${{ matrix.node }}-
+      - name: Install Dependencies
+        run: | 
+          yarn add mocha
+          yarn add axios
+          yarn add dotenv
+          yarn add chai
+          yarn add mochawesome
+      - name: Run All Node.js Tests
+        run: yarn run mocha:test
