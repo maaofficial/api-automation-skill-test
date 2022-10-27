@@ -1,5 +1,6 @@
-### GETTING STARTED
-API Automation using mocha and chai.
+### API Automation Weatherbit
+
+This repository contains scripts to execute API Automation in website weatherbit. This Automation using mocha and chai and all code is written in Javascript.
 
 API Automation Test File : tests/scenarios/wheater.test.js
 
@@ -9,13 +10,20 @@ There are two API Automation Test in website Weatherbit.
 
 2. Second test is to GET /forecast/3hourly?postal_code={postal_code}. It should parse the response and get the value of the { timestamp_utc, weather} for all the data entries
 
-### Installation
+### Dependencies
+- Mocha
+- Chai
+- Axios
+- Dotenv
+- Mochawesome
+
+### How to Installation and Run
 1. Register to get the API token key -  [https://www.weatherbit.io/account/create](https://www.weatherbit.io/account/create)
-2. Clone the repo
+2. Clone the repository with url like command below:
    ```sh
    git clone https://github.com/maaofficial/api-automation-skill-test.git
    ```
-3. go to project directory
+3. Go to Project Directory
 
 4. Install Yarn Dependencies
    ```sh
@@ -26,14 +34,11 @@ There are two API Automation Test in website Weatherbit.
     "BASE_URL": "website weatherbit.io/v2.0"
     "KEY": "your_api_token"
    ```
-
-### How to run
-Run Specific Api test File
-
-  ```sh
+6. To run this Automation Test write this command below in terminal
+   ```sh
   yarn run mocha:test
   ```
-
+  
 ### How to Trigger CI (Github Action)
 1. Commit Changes
 2. Push to repository
