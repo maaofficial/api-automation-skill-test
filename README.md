@@ -13,7 +13,7 @@ API Automation Test File : tests/scenarios/wheater.test.js
 
 4. Install Yarn Dependencies
    ```sh
-   yarn add
+   yarn add mocha chai axios dotenv mochawesome
    ```
 5. Add file `.env` and Enter your API Token, BASE_URL = `https://api.weatherbit.io/v2.0/`
    ```json
