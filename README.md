@@ -15,12 +15,10 @@ API Automation Test File : tests/scenarios/wheater.test.js
    ```sh
    yarn add mocha chai axios dotenv mochawesome
    ```
-5. Add file `.env` and Enter your API Token, BASE_URL = `https://api.weatherbit.io/v2.0/`
-   ```json
-   {
-    "KEY": "your_api_token",
-    "BASE_URL": "sample",
-    }
+5. Add file `.env` and Enter your API Token`
+   ```
+    "BASE_URL": "website weatherbit.io/v2.0"
+    "KEY": "your_api_token"
    ```
 
 ### How to run
