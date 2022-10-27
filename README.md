@@ -36,8 +36,7 @@ There are two API Automation Test in website Weatherbit.
    ```
 6. To run this Automation Test write this command below in terminal
    ```sh
-  yarn run mocha:test
-  ```
+  yarn run mocha:test ```
   
 ### How to Trigger CI (Github Action)
 1. Commit Changes
