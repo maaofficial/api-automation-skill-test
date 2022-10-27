@@ -18,7 +18,7 @@ There are two API Automation Test in website Weatherbit.
 - Mochawesome
 
 ### How to Installation and Run
-1. Register to get the API token key -  [https://www.weatherbit.io/account/create](https://www.weatherbit.io/account/create)
+1. Register new account to get the API token key at website -  [https://www.weatherbit.io/account/create](https://www.weatherbit.io/account/create)
 2. Clone the repository with url like command below:
    ```sh
    git clone https://github.com/maaofficial/api-automation-skill-test.git
@@ -31,8 +31,8 @@ There are two API Automation Test in website Weatherbit.
    ```
 5. Add file `.env` and Enter BASE_URL and API Token
    ```
-    "BASE_URL": "website weatherbit.io/v2.0"
-    "KEY": "your_api_token"
+   "BASE_URL": "website weatherbit.io/v2.0"
+   "KEY": "your_api_token"
    ```
 6. To run this Automation Test write this command below in terminal
    ```sh
